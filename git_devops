@@ -54,7 +54,7 @@ git merge martechanalyticsdev/master --allow-unrelated-histories || true
 
 (OR)
 
-git pull martechanalyticsprod master --allow-unrelated-histories
+git merge martechanalyticsdev/master --allow-unrelated-histories
 
 # If README.md conflict appears, keep the Dev version automatically
 if git diff --name-only --diff-filter=U | grep -q "README.md"; then
