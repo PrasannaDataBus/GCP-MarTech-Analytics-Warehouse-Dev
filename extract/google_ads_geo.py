@@ -140,7 +140,7 @@ def get_child_accounts(manager_customer_id: str):
 
 
 def extract_geo_data(customer_id: str, start_date: str, end_date: str):
-    """Extracts performance data from Google Ads for a specific account and date range."""
+    """Extracts GEO performance data from Google Ads for a specific account and date range."""
     service = ads_client.get_service("GoogleAdsService")
     query = QUERY_TEMPLATE.format(start_date=start_date, end_date=end_date)
     response = service.search_stream(customer_id=customer_id, query=query)
