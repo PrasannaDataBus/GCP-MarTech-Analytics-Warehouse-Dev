@@ -1,6 +1,10 @@
 # Process: Extract Raw Data and Injest into a raw schema inside a raw table
 # Data Points: Several Google Ads Account via API
-# Orchestration: Airflow-Docker-Dev
+# Orchestration: Airflow-Docker-Dev & Airflow-Docker-Prod
+# Partitioning: Assigned in this script (By date)
+# Clustering: Assigned in this script (By important / relevant columns)
+# Incremental Loading: Time Travel window (14 Days)
+# MarTech Dictionary: Refer SharePoint file - MarTech Data Dictionary
 
 from google.ads.googleads.client import GoogleAdsClient
 from google.cloud import bigquery
