@@ -95,8 +95,8 @@ SELECT
   campaign.name,
   campaign.status,
   campaign.serving_status,
-  campaign.start_date_time,
-  campaign.end_date_time
+  campaign.start_date,
+  campaign.end_date
 FROM campaign
 """
 
@@ -159,9 +159,8 @@ def extract_campaign_dimensions(customer_id: str, ads_client):
                 "campaign_name": row.campaign.name,
                 "status": getattr(row.campaign.status, "name", "UNKNOWN"),
                 "serving_status": getattr(row.campaign.serving_status, "name", "UNKNOWN"),
-                # v23+: 'YYYY-MM-DD HH:MM:SS' in account time zone; keep the date part only
-                "start_date": (row.campaign.start_date_time or "")[:10],
-                "end_date": (row.campaign.end_date_time or "")[:10],
+                "start_date": getattr(row.campaign, "start_date", None), # Returns 'YYYY-MM-DD'
+                "end_date": getattr(row.campaign, "end_date", None),     # Returns 'YYYY-MM-DD'
                 "_ingested_at": datetime.now(timezone.utc)
             })
 
