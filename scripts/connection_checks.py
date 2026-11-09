@@ -53,7 +53,7 @@ from facebook_business.adobjects.adaccount import AdAccount
 
 # --- 1. Load Environment Variables ---
 # Try loading from params.env (your project structure) or .env
-env_path = "params.env" if os.path.exists("params.env") else ".env"
+env_path = "params.env" if os.path.exists("../params.env") else ".env"
 if os.path.exists(env_path):
     load_dotenv(env_path, override = True)
     print(f"Loaded configuration from {env_path}")
