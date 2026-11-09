@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 # =====================================================================
 # GCP MarTech Analytics Warehouse - Git DevOps Guide
@@ -115,3 +116,4 @@ git diff martechanalyticsdev/master martechanalyticsprod/master --stat
 
 echo "Dev → Prod sync completed successfully."
 echo "Remember to tag the release and verify in GitHub UI."
+```
